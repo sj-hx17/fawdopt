@@ -297,29 +297,71 @@ input[type="radio"] {
     background-color: #219955;
 }
 
+@media (max-width: 1024px) {
+    html {
+        font-size: 56%;
+    }
+
+    .tab-btn, .question, .options {
+        font-size: 1.8rem;
+    }
+}
+
 @media (max-width: 768px) {
+    html {
+        font-size: 52%;
+    }
+
     .tabs {
-        display: none; 
+        display: none;
     }
 
     .dropdown {
         display: block;
-        font-size: 50%;
     }
 
-    .home {
-        display: flex;
-        align-items: center;
-        text-align: left
+    .options {
+        padding-left: 2rem;
     }
 
-    .qualification-checker {
-        padding: 1rem;
-    }
-    
     .tab-btn {
-        font-size: 0.9rem;
+        font-size: 1.4rem;
         padding: 0.8rem;
     }
 
-} 
+    .container {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 50%;
+    }
+
+    .container h2 {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+    }
+
+    .tab-btn {
+        font-size: 1.2rem;
+        padding: 0.6rem;
+    }
+
+    .question {
+        font-size: 1.6rem;
+    }
+
+    .options {
+        font-size: 1.2rem;
+        padding-left: 1rem;
+    }
+
+    .check-btn {
+        font-size: 1.5rem;
+    }
+
+    header .logo {
+        font-size: 2rem;
+    }
+}
