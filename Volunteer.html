@@ -287,6 +287,10 @@
             .then(() => {
               alert("Application submitted successfully!");
               document.getElementById("volunteerForm").reset();
+              window.location.href = "welcome.html";
+              setTimeout(() => {
+                window.location.href = "welcome.html";
+              }, 1000); // 1-second delay to allow reset to complete
             })
             .catch((error) => {
               console.error("Error saving data: ", error);
@@ -294,10 +298,6 @@
                 "There was an error submitting your application. Please try again."
               );
             });
-          window.location.href = "welcome.html";
-          alert(
-            "Thank you for your volunteer application! We will contact you soon."
-          );
         });
     </script>
     <script>
