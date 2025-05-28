@@ -65,12 +65,18 @@
           <div class="form-group input-field">
             <i class="fas fa-phone"></i>
             <input
-              type="tel"
+              type="text"
               id="phone"
               name="phone"
               placeholder="Phone Number"
+              maxlength="11"
+              inputmode="numeric"
               required
             />
+            <span
+              id="phoneError"
+              style="color: rgb(255, 0, 0); font-size: 1.5rem; display: none"
+            ></span>
           </div>
 
           <div class="form-group input-field">
@@ -219,74 +225,102 @@
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
     <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
-    import {
-      getDatabase,
-      ref,
-      set,
-    } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-database.js";
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        set,
+      } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-database.js";
 
-    // Your web app's Firebase configuration
-    const firebaseConfig = {
-      apiKey: "AIzaSyC7gxkRDS0bJirlWdfLq7Iqv22CzaOVOiE",
-      authDomain: "pleaselang-c33d6.firebaseapp.com",
-      projectId: "pleaselang-c33d6",
-      storageBucket: "pleaselang-c33d6.firebasestorage.app",
-      messagingSenderId: "933830796850",
-      appId: "1:933830796850:web:56227ac58d4c1375a6fe2b",
-      databaseURL: "https://pleaselang-c33d6-default-rtdb.firebaseio.com/",
-    };
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyC7gxkRDS0bJirlWdfLq7Iqv22CzaOVOiE",
+        authDomain: "pleaselang-c33d6.firebaseapp.com",
+        projectId: "pleaselang-c33d6",
+        storageBucket: "pleaselang-c33d6.firebasestorage.app",
+        messagingSenderId: "933830796850",
+        appId: "1:933830796850:web:56227ac58d4c1375a6fe2b",
+        databaseURL: "https://pleaselang-c33d6-default-rtdb.firebaseio.com/",
+      };
 
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const db = getDatabase(app);
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
 
-    document
-      .getElementById("volunteerForm")
-      .addEventListener("submit", function (e) {
-        e.preventDefault();
+      document
+        .getElementById("volunteerForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
 
-        // Get checkbox values
-        const interests = [];
-        if (document.getElementById("animalCare").checked)
-          interests.push("Animal Care");
-        if (document.getElementById("shelterMaintenance").checked)
-          interests.push("Shelter Maintenance");
-        if (document.getElementById("adoptionEvents").checked)
-          interests.push("Adoption Events");
-        if (document.getElementById("fundraising").checked)
-          interests.push("Fundraising");
-        if (document.getElementById("transportation").checked)
-          interests.push("Animal Transportation");
-        if (document.getElementById("admin").checked)
-          interests.push("Administrative Work");
+          // Get checkbox values
+          const interests = [];
+          if (document.getElementById("animalCare").checked)
+            interests.push("Animal Care");
+          if (document.getElementById("shelterMaintenance").checked)
+            interests.push("Shelter Maintenance");
+          if (document.getElementById("adoptionEvents").checked)
+            interests.push("Adoption Events");
+          if (document.getElementById("fundraising").checked)
+            interests.push("Fundraising");
+          if (document.getElementById("transportation").checked)
+            interests.push("Animal Transportation");
+          if (document.getElementById("admin").checked)
+            interests.push("Administrative Work");
 
-        // Create a new volunteer entry
-        set(ref(db, "volunteers/" + Date.now()), {
-          fullName: document.getElementById("fullName").value,
-          email: document.getElementById("email").value,
-          phone: document.getElementById("phone").value,
-          address: document.getElementById("address").value,
-          age: document.getElementById("age").value,
-          availability: document.getElementById("availability").value || "Not specified",
-          interests: interests.join(", "), // Now included in the data
-          experience: document.getElementById("experience").value,
-          whyVolunteer: document.getElementById("whyVolunteer").value,
-          emergencyContact: document.getElementById("emergencyContact").value,
-          timestamp: new Date().toISOString()
-        })
-          .then(() => {
-            alert("Application submitted successfully!");
-            document.getElementById("volunteerForm").reset();
+          // Create a new volunteer entry
+          set(ref(db, "volunteers/" + Date.now()), {
+            fullName: document.getElementById("fullName").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            address: document.getElementById("address").value,
+            age: document.getElementById("age").value,
+            availability:
+              document.getElementById("availability").value || "Not specified",
+            interests: interests.join(", "), // Now included in the data
+            experience: document.getElementById("experience").value,
+            whyVolunteer: document.getElementById("whyVolunteer").value,
+            emergencyContact: document.getElementById("emergencyContact").value,
+            timestamp: new Date().toISOString(),
           })
-          .catch((error) => {
-            console.error("Error saving data: ", error);
-            alert(
-              "There was an error submitting your application. Please try again."
-            );
-          });
-      });
-  </script>
+            .then(() => {
+              alert("Application submitted successfully!");
+              document.getElementById("volunteerForm").reset();
+            })
+            .catch((error) => {
+              console.error("Error saving data: ", error);
+              alert(
+                "There was an error submitting your application. Please try again."
+              );
+            });
+          window.location.href = "welcome.html";
+          alert(
+            "Thank you for your volunteer application! We will contact you soon."
+          );
+          this.reset();
+        });
+    </script>
+    <script>
+      const phoneInput = document.getElementById("phone");
+      const phoneError = document.getElementById("phoneError");
+
+      function validatePhone() {
+        phoneInput.value = phoneInput.value.replace(/\D/g, "").slice(0, 11);
+
+        if (phoneInput.value.length !== 11) {
+          phoneError.textContent = "11 Digit Numerical Value only.";
+          phoneError.style.display = "block";
+          phoneInput.style.borderColor = "red";
+          return false;
+        } else {
+          phoneError.textContent = "";
+          phoneError.style.display = "none";
+          phoneInput.style.borderColor = "";
+          return true;
+        }
+      }
+
+      phoneInput.addEventListener("input", validatePhone);
+    </script>
   </body>
 </html>
