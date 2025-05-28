@@ -1,0 +1,226 @@
+:root {
+    --green: #e1f8ce;
+    --light-green: #b1f0c0;
+    --dark-green: #90bb9a;
+    --header-green: rgb(162, 236, 156);
+    --hover-green: rgb(136, 201, 131);
+    --form-green: #86cf9d;
+    --dark-text: #034918;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.5s linear;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #f9f9f9;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--header-green);
+    padding: 1rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 0.5rem 1rem black;
+}
+
+header .logo {
+    font-size: 2.5rem;
+    color: #000000;
+    font-weight: bolder;
+}
+
+header .logo:hover {
+    color: var(--hover-green);
+}
+
+.tabs {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.tab {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    color: #000000;
+    text-align: center;
+    transition: background 0.5s ease-in-out;
+    border-radius: 5rem;
+}
+
+.tab:hover {
+    background: var(--hover-green);
+}
+
+header .icons a {
+    font-size: 2.5rem;
+    color: black;
+    margin-left: 1rem;
+}
+
+header .icons a:hover {
+    color: var(--hover-green);
+}
+
+.dropdown {
+    display: none;
+    position: relative;
+}
+
+.fa-solid.fa-bars {
+    background-color: transparent;
+    color: black;
+    padding: 1rem;
+    border: none;
+    border-radius: 5rem;
+    cursor: pointer;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.fa-solid.fa-bars:hover {
+    color: var(--hover-green);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(196, 250, 167);
+    border-radius: 1rem;
+    z-index: 1000;
+    width: 175%;
+}
+
+.dropdown-content a {
+    padding: 1rem;
+    text-align: left;
+    display: block;
+    color: #000000;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--hover-green);
+    border-radius: 2rem;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: url(https://surl.li/wzoamm) no-repeat;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    padding-top: 8rem;
+    background-color: var(--light-green);
+}
+
+.container {
+    position: relative;
+    padding: 5rem;
+    width: 95rem;
+    max-width: 95%;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 30px rgba(0,0,0,0.2);
+    margin: 2rem;
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.container h1 {
+    font-size: 5rem;
+    font-weight: bolder;
+    margin-bottom: 1rem;
+    color: var(--dark-text);
+}
+
+.container span {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: gray;
+}
+
+.container p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-top: 2rem;
+}
+
+.event{
+  color: var(--dark-text);
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.faq{
+  color: var(--dark-text);
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .tabs {
+        display: none;
+    }
+
+    .dropdown {
+        display: block;
+    }
+
+    .container {
+        padding: 2rem;
+    }
+
+    .container h1 {
+        font-size: 3rem;
+    }
+
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 55%;
+    }
+
+    .container {
+        padding: 1.5rem;
+    }
+
+    .input-field {
+        height: 4.5rem;
+    }
+}

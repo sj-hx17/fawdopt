@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FawDopt - Qualification Checker</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style-paw.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">FawDopt</a>
+        <div class="tabs">
+            <a href="index.html" class="tab">Home</a>
+            <a href="Events.html" class="tab">Events</a>
+            <a href="Campaign.html" class="tab">Campaign</a>
+            <a href="Donate.html" class="tab">Donate</a>
+            <a href="FAQs.html" class="tab">FAQs</a>
+        </div>
+        <div class="icons">
+            <a href="Journal.html" class="fas fa-heart"></a>
+            <a href="Paw.html" class="fas fa-paw"></a>
+            <a href="AboutUs.html" class="fas fa-user"></a>
+        </div>
+        <div class="dropdown">
+            <button class="fa-solid fa-bars"></button>
+            <div class="dropdown-content">
+                <a href="index.html" class="Home">Home</a>
+                <a href="Events.html" class="Events">Events</a>
+                <a href="Campaign.html" class="Campaign">Campaign</a>
+                <a href="Donate.html" class="Donate">Donate</a>
+                <a href="FAQs.html" class="FAQs">FAQs</a>
+            </div>
+        </div>
+    </header>
+    <section class="home" id="home">
+        <div class="container">
+            <div class="qualification-checker">
+                <h2><i class="fas fa-clipboard-check"></i> Qualification Checker</h2>
+                
+                <div class="tab-buttons">
+                    <button class="tab-btn active" onclick="openTab('adoption')">Adoption</button>
+                    <button class="tab-btn" onclick="openTab('volunteer')">Volunteering</button>
+                </div>
+                
+                <div id="adoption" class="tab-content" style="display: block;">
+                    <div class="question-container">
+                        <div class="question">1. Do you have stable housing?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q1" value="yes"> Yes, I own my home or have landlord approval
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="no"> No, my housing situation is temporary
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="question-container">
+                        <div class="question">2. Can you commit to caring for a pet for 10+ years?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q2" value="yes"> Yes, I understand this is a long-term commitment
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="no"> No, I'm not sure about my long-term plans
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="question-container">
+                        <div class="question">3. Can you afford veterinary care (approx. 10000-50000 per year)?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q3" value="yes"> Yes, I can budget for pet care expenses
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="no"> No, this would be financially difficult
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button class="check-btn" onclick="checkQualification('adoption')">Check Eligibility</button>
+                    
+                    <div id="adoption-result" class="result"></div>
+                </div>
+                
+                <div id="volunteer" class="tab-content" style="display: none;">
+                    <div class="question-container">
+                        <div class="question">1. Can you commit to at least 8 hours per month?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="vq1" value="yes"> Yes, I can commit regularly
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="vq1" value="no"> No, my schedule is unpredictable
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="question-container">
+                        <div class="question">2. Do you have any experience with animals?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="vq2" value="yes"> Yes, I've owned pets or volunteered before
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="vq2" value="no"> No, but I'm eager to learn
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="question-container">
+                        <div class="question">3. Are you comfortable handling animals that may be scared or injured?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="vq3" value="yes"> Yes, I understand they may need patience
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="vq3" value="no"> No, I'd prefer non-handling roles
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button class="check-btn" onclick="checkQualification('volunteer')">Check Eligibility</button>
+                    
+                    <div id="volunteer-result" class="result"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function openTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.style.display = 'none';
+            });
+            
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            document.getElementById(tabName).style.display = 'block';
+            event.currentTarget.classList.add('active');
+        }
+        
+        function checkQualification(type) {
+            let allAnswered = true;
+            let yesCount = 0;
+            const totalQuestions = 3;
+            
+            if (type === 'adoption') {
+                for (let i = 1; i <= totalQuestions; i++) {
+                    const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+                    if (!selectedOption) {
+                        allAnswered = false;
+                        break;
+                    }
+                    if (selectedOption.value === 'yes') yesCount++;
+                }
+                
+                const resultDiv = document.getElementById('adoption-result');
+                showResult(resultDiv, allAnswered, yesCount, totalQuestions, type);
+            } 
+            else if (type === 'volunteer') {
+                for (let i = 1; i <= totalQuestions; i++) {
+                    const selectedOption = document.querySelector(`input[name="vq${i}"]:checked`);
+                    if (!selectedOption) {
+                        allAnswered = false;
+                        break;
+                    }
+                    if (selectedOption.value === 'yes') yesCount++;
+                }
+                
+                const resultDiv = document.getElementById('volunteer-result');
+                showResult(resultDiv, allAnswered, yesCount, totalQuestions, type);
+            }
+        }
+        
+        function showResult(resultDiv, allAnswered, yesCount, totalQuestions, type) {
+            if (!allAnswered) {
+                alert('Please answer all questions before checking your qualification.');
+                return;
+            }
+            
+            resultDiv.style.display = 'block';
+            
+            if (type === 'adoption') {
+                if (yesCount === totalQuestions) {
+                    resultDiv.className = 'result qualified';
+                    resultDiv.innerHTML = `
+                        <h3><i class="fas fa-check-circle"></i> You qualify for adoption!</h3>
+                        <p>You meet all our basic requirements. <a href="Adoption.html">Start your application</a> or visit our shelter to meet available pets.</p>
+                    `;
+                } else if (yesCount >= 1) {
+                    resultDiv.className = 'result qualified';
+                    resultDiv.innerHTML = `
+                        <h3><i class="fas fa-info-circle"></i> Partial Qualification</h3>
+                        <p>You meet some requirements. Please contact us to discuss your situation. Some pets may still be a good match!</p>
+                    `;
+                } else {
+                    resultDiv.className = 'result not-qualified';
+                    resultDiv.innerHTML = `
+                        <h3><i class="fas fa-exclamation-circle"></i> Currently Not Qualified</h3>
+                        <p>Based on your answers, adoption may not be the right option now. Contact us if you think you still qualify at <i>help@fawdopt.org</i>.</p>
+                    `;
+                }
+            } 
+            else if (type === 'volunteer') {
+                if (yesCount >= 2) {
+                    resultDiv.className = 'result qualified';
+                    resultDiv.innerHTML = `
+                        <h3><i class="fas fa-check-circle"></i> Great Volunteer Candidate!</h3>
+                        <p>We'd love to have you! <a href="Volunteer.html">Apply now</a> or attend our next orientation.</p>
+                    `;
+                } else {
+                    resultDiv.className = 'result qualified';
+                    resultDiv.innerHTML = `
+                        <h3><i class="fas fa-info-circle"></i> Volunteer Opportunities Available</h3>
+                        <p>You might prefer non-animal handling roles. Visit our <a href="Events.html">Events</a> and contact us at <i>help@fawdopt.org</i>.</p>
+                    `;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

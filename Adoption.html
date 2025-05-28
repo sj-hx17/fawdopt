@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FawDopt - Adoption Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style-adoption.css" />
+
+    <script src="script/pets.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="logo">FawDopt</a>
+      <div class="tabs">
+        <a href="index.html" class="tab">Home</a>
+        <a href="Events.html" class="tab">Events</a>
+        <a href="Campaign.html" class="tab">Campaign</a>
+        <a href="Donate.html" class="tab">Donate</a>
+        <a href="FAQs.html" class="tab">FAQs</a>
+      </div>
+      <div class="icons">
+        <a href="Journal.html" class="fas fa-heart"></a>
+        <a href="Paw.html" class="fas fa-paw"></a>
+        <a href="AboutUs.html" class="fas fa-user"></a>
+      </div>
+      <div class="dropdown">
+        <button class="fa-solid fa-bars"></button>
+        <div class="dropdown-content">
+          <a href="index.html" class="Home">Home</a>
+          <a href="Events.html" class="Events">Events</a>
+          <a href="Campaign.html" class="Campaign">Campaign</a>
+          <a href="Donate.html" class="Donate">Donate</a>
+          <a href="FAQs.html" class="FAQs">FAQs</a>
+        </div>
+      </div>
+    </header>
+    <section class="home" id="home">
+      <div class="container">
+        <h1>Adoption Application</h1>
+        <form id="adoptionForm">
+          <h2 class="title2">
+            <i class="fas fa-user-circle"></i> Personal Information
+          </h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="Full Name"
+              required
+            />
+          </div>
+
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email Address"
+              required
+            />
+          </div>
+
+          <div class="input-field">
+            <i class="fas fa-phone"></i>
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              placeholder="Phone Number"
+              maxlength="11"
+              inputmode="numeric"
+              required
+            />
+            <span
+              id="phoneError"
+              style="color: rgb(255, 0, 0); font-size: 1.5rem; display: none"
+            ></span>
+          </div>
+
+          <div class="input-field">
+            <i class="fas fa-home"></i>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              placeholder="Full Address"
+              required
+            />
+          </div>
+
+          <h2 class="title2">
+            <i class="fas fa-house-user"></i> Household Information
+          </h2>
+          <div class="input-field">
+            <i class="fas fa-users"></i>
+            <select id="householdType" name="householdType" required>
+              <option value="">Select Household Type</option>
+              <option value="single">Single</option>
+              <option value="couple">Couple</option>
+              <option value="family">Family with Children</option>
+              <option value="roommates">Roommates</option>
+            </select>
+          </div>
+
+          <div class="input-field">
+            <i class="fas fa-child"></i>
+            <select id="children" name="children" required>
+              <option value="">Number of Children</option>
+              <option value="none">NONE</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="">More than 6</option>
+            </select>
+          </div>
+
+          <div class="input-field">
+            <i class="fas fa-paw"></i>
+            <select id="currentPets" name="currentPets" required>
+              <option value="">Do you currently have pets?</option>
+              <option value="none">No pets</option>
+              <option value="dogs">Dogs</option>
+              <option value="cats">Cats</option>
+              <option value="both">Both dogs and cats</option>
+              <option value="other">Other pets</option>
+            </select>
+          </div>
+
+          <h2 class="title2"><i class="fas fa-paw"></i> Pet Preferences</h2>
+          <div class="input-field">
+            <i class="fas fa-dog"></i>
+            <select id="petType" name="petType" required>
+              <option value="">Type of Pet Interested In</option>
+              <option value="dog">Dog</option>
+              <option value="cat">Cat</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="input-field">
+            <i class="fas fa-paw"></i>
+            <select id="petSize" name="petSize">
+              <option value="">Preferred Size (for dogs)</option>
+              <option value="small">Small (under 20 lbs)</option>
+              <option value="medium">Medium (20-50 lbs)</option>
+              <option value="large">Large (50+ lbs)</option>
+              <option value="any">Any size</option>
+            </select>
+          </div>
+
+          <div class="input-field">
+            <i class="fas fa-question-circle"></i>
+            <select id="petAge" name="petAge">
+              <option value="">Preferred Age</option>
+              <option value="puppy">Puppy/Kitten (0-1 year)</option>
+              <option value="young">Young (1-3 years)</option>
+              <option value="adult">Adult (3-7 years)</option>
+              <option value="senior">Senior (7+ years)</option>
+              <option value="any">Any age</option>
+            </select>
+          </div>
+
+          <h2 class="title2"><i class="fas fa-running"></i> Lifestyle</h2>
+          <div class="form-group">
+            <label>Your Daily Routine (Select all that apply)</label>
+            <div class="checkbox-group">
+              <div class="checkbox-item">
+                <input
+                  type="checkbox"
+                  id="routine1"
+                  name="routine"
+                  value="homeMost"
+                />
+                <label for="routine1">Home most of the day</label>
+              </div>
+              <div class="checkbox-item">
+                <input
+                  type="checkbox"
+                  id="routine2"
+                  name="routine"
+                  value="workFull"
+                />
+                <label for="routine2">Work full-time outside home</label>
+              </div>
+              <div class="checkbox-item">
+                <input
+                  type="checkbox"
+                  id="routine3"
+                  name="routine"
+                  value="active"
+                />
+                <label for="routine3">Very active lifestyle</label>
+              </div>
+              <div class="checkbox-item">
+                <input
+                  type="checkbox"
+                  id="routine4"
+                  name="routine"
+                  value="flexible"
+                />
+                <label for="routine4">Flexible schedule</label>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="title2"><i class="fas fa-home"></i> Home Environment</h2>
+          <div class="input-field">
+            <i class="fas fa-home"></i>
+            <select id="housingType" name="housingType" required>
+              <option value="">Type of Housing</option>
+              <option value="house">House</option>
+              <option value="apartment">Apartment</option>
+              <option value="condo">Condo</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="input-field">
+            <i class="fas fa-key"></i>
+            <select id="ownership" name="ownership" required>
+              <option value="">Do you own or rent?</option>
+              <option value="own">Own</option>
+              <option value="rent">Rent</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="yardInfo"
+              >Describe your yard/outdoor space (if applicable)</label
+            >
+            <textarea id="yardInfo" name="yardInfo" rows="3"></textarea>
+          </div>
+
+          <h2 class="title2">
+            <i class="fas fa-comment-alt"></i> Additional Information
+          </h2>
+          <div class="form-group">
+            <label for="adoptionReason">Why do you want to adopt a pet?</label>
+            <textarea
+              id="adoptionReason"
+              name="adoptionReason"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="petExperience"
+              >Describe your previous experience with pets</label
+            >
+            <textarea
+              id="petExperience"
+              name="petExperience"
+              rows="4"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="additionalInfo"
+              >Any additional information we should know?</label
+            >
+            <textarea
+              id="additionalInfo"
+              name="additionalInfo"
+              rows="4"
+            ></textarea>
+          </div>
+
+          <h2 class="title2"><i class="fas fa-paw"></i> Pet Preferences</h2>
+
+          <div class="input-field">
+            <i class="fas fa-paw"></i>
+            <select id="specificPet" name="specificPet" required>
+              <option value="">Select a pet to adopt</option>
+            </select>
+          </div>
+          <div id="selectedPetDisplay" style="margin: 20px 0; display: none">
+            <h3>Selected Pet</h3>
+            <div style="display: flex; align-items: center; gap: 20px">
+              <img
+                id="selectedPetImage"
+                src=""
+                alt="Selected pet"
+                style="
+                  width: 150px;
+                  height: 150px;
+                  object-fit: cover;
+                  border-radius: 8px;
+                "
+              />
+              <div>
+                <h4 id="selectedPetName"></h4>
+                <p id="selectedPetBreed"></p>
+                <p id="selectedPetAge"></p>
+                <p id="selectedPetDescription"></p>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn btn">
+            <i class="fas fa-paw"></i> Submit Application
+          </button>
+        </form>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        set,
+      } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-database.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyC7gxkRDS0bJirlWdfLq7Iqv22CzaOVOiE",
+        authDomain: "pleaselang-c33d6.firebaseapp.com",
+        projectId: "pleaselang-c33d6",
+        storageBucket: "pleaselang-c33d6.firebasestorage.app",
+        messagingSenderId: "933830796850",
+        appId: "1:933830796850:web:56227ac58d4c1375a6fe2b",
+        databaseURL: "https://pleaselang-c33d6-default-rtdb.firebaseio.com/", // Add this line
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+
+      document
+        .getElementById("adoptionForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Get checkbox values
+          const routines = [];
+          if (document.getElementById("routine1").checked)
+            routines.push("homeMost");
+          if (document.getElementById("routine2").checked)
+            routines.push("workFull");
+          if (document.getElementById("routine3").checked)
+            routines.push("active");
+          if (document.getElementById("routine4").checked)
+            routines.push("flexible");
+
+          // Create a new adoption entry
+          set(ref(db, "adoptions/" + Date.now()), {
+            fullName: document.getElementById("fullName").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            address: document.getElementById("address").value,
+            householdType: document.getElementById("householdType").value,
+            children: document.getElementById("children").value || 0,
+            currentPets: document.getElementById("currentPets").value,
+            petType: document.getElementById("petType").value,
+            petSize: document.getElementById("petSize").value,
+            petAge: document.getElementById("petAge").value,
+            routines: routines,
+            housingType: document.getElementById("housingType").value,
+            ownership: document.getElementById("ownership").value,
+            yardInfo: document.getElementById("yardInfo").value,
+            adoptionReason: document.getElementById("adoptionReason").value,
+            petExperience: document.getElementById("petExperience").value,
+            additionalInfo: document.getElementById("additionalInfo").value,
+            specificPet: document.getElementById("specificPet").value,
+            timestamp: new Date().toISOString(),
+          })
+            .then(() => {
+              alert("Application submitted successfully!");
+              document.getElementById("adoptionForm").reset();
+            })
+            .catch((error) => {
+              console.error("Error saving data: ", error);
+              alert(
+                "There was an error submitting your application. Please try again."
+              );
+            });
+        });
+    </script>
+    <script>
+      const phoneInput = document.getElementById("phone");
+      const phoneError = document.getElementById("phoneError");
+
+      function validatePhone() {
+        phoneInput.value = phoneInput.value.replace(/\D/g, "").slice(0, 11);
+
+        if (phoneInput.value.length !== 11) {
+          phoneError.textContent = "11 Digit Numerical Value only.";
+          phoneError.style.display = "block";
+          phoneInput.style.borderColor = "red";
+          return false;
+        } else {
+          phoneError.textContent = "";
+          phoneError.style.display = "none";
+          phoneInput.style.borderColor = "";
+          return true;
+        }
+      }
+
+      phoneInput.addEventListener("input", validatePhone);
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const petSelect = document.getElementById("specificPet");
+        const petDisplay = document.getElementById("selectedPetDisplay");
+        const petImage = document.getElementById("selectedPetImage");
+        const petName = document.getElementById("selectedPetName");
+        const petBreed = document.getElementById("selectedPetBreed");
+        const petAge = document.getElementById("selectedPetAge");
+        const petDescription = document.getElementById(
+          "selectedPetDescription"
+        );
+
+        const availablePets = pets.filter((pet) => pet.status === "available");
+
+        petSelect.innerHTML = '<option value="">Select a pet to adopt</option>';
+
+        availablePets.forEach((pet) => {
+          const option = document.createElement("option");
+          option.value = pet.id;
+          option.textContent = `${pet.name} - ${pet.breed}`;
+          petSelect.appendChild(option);
+        });
+
+        petSelect.addEventListener("change", function () {
+          if (this.value) {
+            const selectedPet = pets.find((pet) => pet.id == this.value);
+            if (selectedPet) {
+              petImage.src = selectedPet.image;
+              petName.textContent = selectedPet.name;
+              petBreed.textContent = selectedPet.breed;
+              petAge.textContent = selectedPet.age;
+              petDescription.textContent = selectedPet.description;
+              petDisplay.style.display = "block";
+            }
+          } else {
+            petDisplay.style.display = "none";
+          }
+        });
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const petId = urlParams.get("petId");
+        if (petId) {
+          petSelect.value = petId;
+          petSelect.dispatchEvent(new Event("change"));
+        }
+      });
+    </script>
+  </body>
+</html>

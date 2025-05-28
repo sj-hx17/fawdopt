@@ -1,0 +1,231 @@
+:root {
+    --green: #e1f8ce;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.5s linear;
+}
+
+html {
+    font-size: 62.5%; 
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgb(162, 236, 156);
+    padding: 1rem 5%; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 0.5rem 1rem black;
+}
+
+header .logo {
+    font-size: 2.5rem; 
+    color: #000000;
+    font-weight: bolder;
+}
+
+header .logo:hover{
+    color:rgb(136, 201, 131)
+}
+
+.tabs {
+    display: flex;
+    gap: 1rem; 
+    flex-wrap: wrap; 
+}
+
+.tab {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    color: #000000;
+    text-align: center;
+    transition: background 0.5s ease-in-out;
+    border-radius: 5rem;
+}
+
+.tab:hover {
+    background: rgb(136, 201, 131);
+}
+
+header .icons a {
+    font-size: 2.5rem; 
+    color: black;
+    margin-left: 1rem; 
+}
+
+header .icons a:hover {
+    color: rgb(136, 201, 131);
+}
+
+.dropdown {
+    display: none; 
+    position: relative;
+}
+
+.fa-solid.fa-bars {
+    background-color: transparent;
+    color: black;
+    padding: 1rem;
+    border: none;
+    border-radius: 5rem;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.fa-solid.fa-bars:hover{
+    color: rgb(136, 201, 131);
+}
+
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    background-color: rgb(196, 250, 167);
+    border-radius: 1rem;
+    z-index: 1000;
+    width: 175%; 
+}
+
+.dropdown-content a{
+    padding: 1rem;
+    text-align: left;
+    display: block;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(156, 199, 133);
+    border-radius: 2rem;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.home {
+  margin-top: 25px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+.container-calendar {
+  margin: 50px auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+}
+h2 {
+  text-align: center;
+  background-color: rgb(136, 201, 131);;
+  color: white;
+  padding: 10px;
+  font-size: 8rem;
+  font-weight: bold;
+
+}
+h2:hover {
+    color: darkgreen;
+}
+table {
+  width: 100%;
+  height: auto;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+th, td{
+  width: 14.28%;
+  height: 100px;
+  text-align: center;
+  vertical-align: top;
+  border: 1px solid #ddd;
+  position: relative;
+  cursor: pointer;
+}
+td {
+  background-color: #f1f1f1;
+}
+.event-title {
+  font-size: 2.2rem;
+  color: #555;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+td:hover {
+  background-color: #c0eddf;
+}
+.description {
+  color: #555;
+  font-size: 1.2rem;
+}
+.day{
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+.calendar{
+    font-size: 20px;
+}
+@media (max-width: 768px) {
+    .tabs {
+        display: none; 
+    }
+
+    .dropdown {
+        display: block;
+        font-size: 50%;
+    }
+
+    .home {
+        display: flex;
+        align-items: center;
+        text-align: left
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+        
+    .video-container {
+        margin: 1rem 0;
+    }
+        
+    .campaign-content {
+        padding: 1.5rem;
+    }
+} 

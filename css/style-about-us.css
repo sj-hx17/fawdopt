@@ -1,0 +1,204 @@
+:root {
+    --green: #e1f8ce;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.5s linear;
+}
+
+html {
+    font-size: 62.5%; 
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    color: #000000;
+    padding: 0.9rem 3.5rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgb(162, 236, 156);
+    padding: 1rem 5%; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 0.5rem 1rem black;
+}
+
+header .logo {
+    font-size: 2.5rem; 
+    color: #000000;
+    font-weight: bolder;
+}
+
+header .logo:hover{
+    color:rgb(136, 201, 131)
+}
+
+.tabs {
+    display: flex;
+    gap: 1rem; 
+    flex-wrap: wrap; 
+}
+
+.tab {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    color: #000000;
+    text-align: center;
+    transition: background 0.5s ease-in-out;
+    border-radius: 5rem;
+}
+
+.tab:hover {
+    background: rgb(136, 201, 131);
+}
+
+header .icons a {
+    font-size: 2.5rem; 
+    color: black;
+    margin-left: 1rem; 
+}
+
+header .icons a:hover {
+    color: rgb(136, 201, 131);
+}
+
+.dropdown {
+    display: none; 
+    position: relative;
+}
+
+.fa-solid.fa-bars {
+    background-color: transparent;
+    color: black;
+    padding: 1rem;
+    border: none;
+    border-radius: 5rem;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.fa-solid.fa-bars:hover{
+    color: rgb(136, 201, 131);
+}
+
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    background-color: rgb(196, 250, 167);
+    border-radius: 1rem;
+    z-index: 1000;
+    width: 175%; 
+}
+
+.dropdown-content a{
+    padding: 1rem;
+    text-align: left;
+    display: block;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(156, 199, 133);
+    border-radius: 2rem;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: url(https://surl.li/wzoamm) no-repeat;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    padding-top: 8rem;
+    background-color: #b1f0c0;
+}
+
+.container {
+    position: relative;
+    padding: 40px 20px;
+    width: 850px;
+    height: auto;
+    background: #ffffff52;
+    box-shadow: 0 0 30px rgba(0,0,0,.2);
+    margin: 20px;
+    align-items: center;
+    text-align: center;
+    border-radius: 2rem;
+}
+
+.container h2{
+    font-size: 60px;
+    font-weight: bolder;
+}
+
+.container span {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(190, 190, 190);
+}
+
+.container p{
+    font-size: 12px;
+    font-weight: bold;
+    padding-top: 25px;
+}
+
+.button{
+    font-size: 12px;
+    background-color: #90bb9a;
+}
+
+.button:hover{
+    background-color: rgba(152, 177, 141, 0.5);
+}
+
+
+@media (max-width: 768px) {
+    .tabs {
+        display: none; 
+    }
+
+    .dropdown {
+        display: block;
+        font-size: 50%;
+    }
+
+    .home {
+        display: flex;
+        align-items: center;
+        text-align: left
+    }
+
+} 

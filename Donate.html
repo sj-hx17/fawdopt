@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FawDopt - Donate</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style-donate.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">FawDopt</a>
+        <div class="tabs">
+            <a href="index.html" class="tab">Home</a>
+            <a href="Events.html" class="tab">Events</a>
+            <a href="Campaign.html" class="tab">Campaign</a>
+            <a href="Donate.html" class="tab">Donate</a>
+            <a href="FAQs.html" class="tab">FAQs</a>
+        </div>
+        <div class="icons">
+            <a href="Journal.html" class="fas fa-heart"></a>
+            <a href="Paw.html" class="fas fa-paw"></a>
+            <a href="AboutUs.html" class="fas fa-user"></a>
+        </div>
+        <div class="dropdown">
+            <button class="fa-solid fa-bars"></button>
+            <div class="dropdown-content">
+                <a href="index.html" class="Home">Home</a>
+                <a href="Events.html" class="Events">Events</a>
+                <a href="Campaign.html" class="Campaign">Campaign</a>
+                <a href="Donate.html" class="Donate">Donate</a>
+                <a href="FAQs.html" class="FAQs">FAQs</a>
+            </div>
+        </div>
+    </header>
+    <section class="home" id="home">
+        <div class="container">
+            <h2>Donate</h2>
+            <span>When animals are Happy, they go ROR</span>
+            <p>Every donation helps save a life. By supporting FawDopt, you're giving stray animals the chance for a loving home, medical care, and a brighter future. No amount is too small, your kindness makes all the difference. </p>
+            <br>
+            <button id="donateButton" class="button">Donate Now</button>
+            
+            <div id="donationDetails" class="donation-details">
+                <h3>How to Donate</h3>
+                
+                <div class="donation-method">
+                    <h4>Bank Transfer</h4>
+                    <p><strong>Bank Name:</strong> Banko Sentral ng Pilipinas</p>
+                    <p><strong>Account Name:</strong> FawDopt Foundation</p>
+                    <p><strong>Account Number:</strong> 1234 5678 9012</p>
+                    <p><strong>SWIFT Code:</strong> FACB1234</p>
+                </div>
+                
+                <div class="donation-method">
+                    <h4>Credit/Debit Card</h4>
+                    <p>We accept all major credit and debit cards</p>
+                    <h5><i class="fab fa-cc-visa"></i> <i class="fab fa-cc-mastercard"></i> <i class="fab fa-cc-amex"></i></h5>
+                </div>
+                
+                <div class="donation-method">
+                    <h4>Mobile Payment</h4>
+                    <p><strong>GCash:</strong> 0917 123 4567 (FawDopt Foundation)</p>
+                    <p><strong>PayMaya:</strong> 0917 765 4321 (FawDopt Foundation)</p>
+                </div>
+                
+                <div class="donation-method">
+                    <h4>In-Person Donations</h4>
+                    <p>Visit our shelter at:</p>
+                    <p>Don Honorio Ventura State University</p>
+                </div>
+                
+                <p>For any questions about donations, please email us at <i>donations@fawdopt.org</i></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('donateButton').addEventListener('click', function() {
+            const donationDetails = document.getElementById('donationDetails');
+            if (donationDetails.style.display === 'block') {
+                donationDetails.style.display = 'none';
+            } else {
+                donationDetails.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

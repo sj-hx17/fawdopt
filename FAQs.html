@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FawDopt - FAQs</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style-faqs.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">FawDopt</a>
+        <div class="tabs">
+            <a href="index.html" class="tab">Home</a>
+            <a href="Events.html" class="tab">Events</a>
+            <a href="Campaign.html" class="tab">Campaign</a>
+            <a href="Donate.html" class="tab">Donate</a>
+            <a href="FAQs.html" class="tab">FAQs</a>
+        </div>
+        <div class="icons">
+            <a href="Journal.html" class="fas fa-heart"></a>
+            <a href="Paw.html" class="fas fa-paw"></a>
+            <a href="AboutUs.html" class="fas fa-user"></a>
+        </div>
+        <div class="dropdown">
+            <button class="fa-solid fa-bars"></button>
+            <div class="dropdown-content">
+                <a href="index.html" class="Home">Home</a>
+                <a href="Events.html" class="Events">About Us</a>
+                <a href="Campaign.html" class="Campaign">Campaign</a>
+                <a href="Donate.html" class="Donate">Donate</a>
+                <a href="FAQs.html" class="FAQs">FAQs</a>
+            </div>
+        </div>
+    </header>
+    <section class="home" id="home">
+        <div class="container">
+            <h2>FAQs</h2>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span><i class="fas fa-paw faq-icon"></i>How does FawDopt help stray animals?</span>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>We connect stray animals with loving homes through our adoption platform, provide medical care, and run awareness campaigns to reduce street animal populations.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span><i class="fas fa-home faq-icon"></i>Can I adopt if I've never had a pet before?</span>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Absolutely! We guide first-time pet parents with resources and post-adoption support to ensure a smooth transition.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span><i class="fas fa-donate faq-icon"></i>Where do my donations go?</span>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>100% of donations fund:
+                        <br>Veterinary care
+                        <br>Shelter operations
+                        <br>Community education programs
+                    </p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span><i class="fas fa-hands-helping faq-icon"></i>How can I volunteer?</span>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Join us as a foster caregiver, event helper, or social media advocate! <a href="Paw.html">Apply here</a>.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span><i class="fas fa-syringe faq-icon"></i>Are adopted animals vaccinated?</span>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes! Every animal is vaccinated, microchipped, and health-checked before adoption.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span><i class="fas fa-heart faq-icon"></i>What if the adoption doesn't work out?</span>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>We offer a 30-day trial period and lifelong support. If needed, we'll take the pet back—no questions asked.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span><i class="fas fa-dog faq-icon"></i>Do you rescue specific breeds?</span>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>No, we believe every stray deserves love, regardless of breed, age, or disability.</p>
+                </div>
+            </div>
+            
+            <div class="faq-contact" id="#FAQContact">
+                <h3>Still have questions?</h3>
+                <p>Email us at <strong>help@fawdopt.org</strong> or call <strong>(123) 456-7890</strong>.</p>
+            </div>
+        </section>
+    
+        <script>
+            document.querySelectorAll('.faq-question').forEach(button => {
+                button.addEventListener('click', () => {
+                    const answer = button.nextElementSibling;
+                    const isOpen = answer.classList.contains('show');
+                    
+                    document.querySelectorAll('.faq-answer').forEach(item => {
+                        item.classList.remove('show');
+                    });
+                    document.querySelectorAll('.faq-question').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    if (!isOpen) {
+                        answer.classList.add('show');
+                        button.classList.add('active');
+                    }
+                });
+            });
+        </script>
+            
+        </div>
+    </section>
+</body>
+</html>

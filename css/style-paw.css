@@ -1,0 +1,325 @@
+:root {
+    --green: #e1f8ce;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.5s linear;
+}
+
+html {
+    font-size: 62.5%; 
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: blanchedalmond;
+    color: #000000;
+    padding: 0.9rem 3.5rem;
+    cursor: pointer;
+    font-size: 1.2rem; 
+    font-weight: bold;
+}
+
+.button:hover {
+    background: var(--orange);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgb(162, 236, 156);
+    padding: 1rem 5%; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 0.5rem 1rem black;
+}
+
+header .logo {
+    font-size: 2.5rem; 
+    color: #000000;
+    font-weight: bolder;
+}
+
+header .logo:hover{
+    color:rgb(136, 201, 131)
+}
+
+.tabs {
+    display: flex;
+    gap: 1rem; 
+    flex-wrap: wrap; 
+}
+
+.tab {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    color: #000000;
+    text-align: center;
+    transition: background 0.5s ease-in-out;
+    border-radius: 5rem;
+}
+
+.tab:hover {
+    background: rgb(136, 201, 131);
+}
+
+header .icons a {
+    font-size: 2.5rem; 
+    color: black;
+    margin-left: 1rem; 
+}
+
+header .icons a:hover {
+    color: rgb(136, 201, 131);
+}
+
+.dropdown {
+    display: none; 
+    position: relative;
+}
+
+.fa-solid.fa-bars {
+    background-color: transparent;
+    color: black;
+    padding: 1rem;
+    border: none;
+    border-radius: 5rem;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.fa-solid.fa-bars:hover{
+    color: rgb(136, 201, 131);
+}
+
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    background-color: rgb(196, 250, 167);
+    border-radius: 1rem;
+    z-index: 1000;
+    width: 175%; 
+}
+
+.dropdown-content a{
+    padding: 1rem;
+    text-align: left;
+    display: block;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(156, 199, 133);
+    border-radius: 2rem;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: url(https://surl.li/wzoamm) no-repeat;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    padding-top: 8rem;
+    background-color: #b1f0c0;
+}
+
+.container {
+    position: relative;
+    padding: 40px 20px;
+    width: 850px;
+    height: auto;
+    background: #ffffff52;
+    box-shadow: 0 0 30px rgba(0,0,0,.2);
+    margin: 20px;
+    align-items: center;
+    text-align: center;
+    border-radius: 2rem;
+}
+
+.container h2{
+    font-size: 60px;
+    font-weight: bolder;
+}
+
+.container span {
+    font-size: 14px;
+    font-weight: bold;
+    color: gray;
+}
+
+.container p{
+    font-size: 12px;
+    font-weight: bold;
+    padding-top: 25px;
+}
+
+.button{
+    font-size: 12px;
+    background-color: #90bb9a;
+}
+
+.button:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.qualification-checker {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    font-family: 'Arial', sans-serif;
+    background-color: rgba(218, 245, 200, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.tab-buttons {
+    display: flex;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #e1f8ce;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 2rem;
+    color: #7f8c8d;
+    transition: all 0.3s;
+    font-size: 2rem;
+}
+
+.tab-btn.active {
+    color: #27ae60;
+    border-bottom: 3px solid #27ae60;
+    font-size: 2rem;
+}
+
+.question-container {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.question {
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    font-size: 1.8rem;
+    padding-left: 3rem;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+input[type="radio"] {
+    accent-color: #27ae60;
+}
+
+.result {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: none;
+    text-align: center;
+}
+
+.qualified {
+    background-color: #e1f8ce;
+    color: #27ae60;
+}
+
+.not-qualified {
+    background-color: #ffebee;
+    color: #e74c3c;
+}
+
+.check-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.check-btn:hover {
+    background-color: #219955;
+}
+
+@media (max-width: 768px) {
+    .tabs {
+        display: none; 
+    }
+
+    .dropdown {
+        display: block;
+        font-size: 50%;
+    }
+
+    .home {
+        display: flex;
+        align-items: center;
+        text-align: left
+    }
+
+    .qualification-checker {
+        padding: 1rem;
+    }
+    
+    .tab-btn {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+    }
+
+} 

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FawDopt - Volunteer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style-volunteer.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">FawDopt</a>
+        <div class="tabs">
+            <a href="index.html" class="tab">Home</a>
+            <a href="Events.html" class="tab">Events</a>
+            <a href="Campaign.html" class="tab">Campaign</a>
+            <a href="Donate.html" class="tab">Donate</a>
+            <a href="FAQs.html" class="tab">FAQs</a>
+        </div>
+        <div class="icons">
+            <a href="Journal.html" class="fas fa-heart"></a>
+            <a href="Paw.html" class="fas fa-paw"></a>
+            <a href="AboutUs.html" class="fas fa-user"></a>
+        </div>
+        <div class="dropdown">
+            <button class="fa-solid fa-bars"></button>
+            <div class="dropdown-content">
+                <a href="index.html" class="Home">Home</a>
+                <a href="Events.html" class="Events">Events</a>
+                <a href="Campaign.html" class="Campaign">Campaign</a>
+                <a href="Donate.html" class="Donate">Donate</a>
+                <a href="FAQs.html" class="FAQs">FAQs</a>
+            </div>
+        </div>
+    </header>
+    <section class="home" id="home">
+        <div class="container">
+            <h1>Become a FawDopt Volunteer</h1>
+            <form id="volunteerForm">
+                <div class="form-group input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
+                </div>
+                
+                <div class="form-group input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" name="email" placeholder="Email Address" required>
+                </div>
+                
+                <div class="form-group input-field">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                </div>
+                
+                <div class="form-group input-field">
+                    <i class="fas fa-home"></i>
+                    <input type="text" id="address" name="address" placeholder="Address" required>
+                </div>
+                
+                <div class="form-group input-field">
+                    <i class="fas fa-birthday-cake"></i>
+                    <input type="number" id="age" name="age" placeholder="Age" required>
+                </div>
+                
+                <div class="form-group input-field">
+                    <i class="fas fa-calendar-check"></i>
+                    <select id="availability" name="availability" required>
+                        <option value="">Select your availability</option>
+                        <option value="weekdays">Weekdays</option>
+                        <option value="weekends">Weekends</option>
+                        <option value="both">Both weekdays and weekends</option>
+                        <option value="flexible">Flexible</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Volunteer Interests (Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="animalCare" name="interests" value="animalCare">
+                            <label for="animalCare"><i class="fas fa-paw"></i> Animal Care (feeding, grooming)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="shelterMaintenance" name="interests" value="shelterMaintenance">
+                            <label for="shelterMaintenance"><i class="fas fa-hammer"></i> Shelter Maintenance</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="adoptionEvents" name="interests" value="adoptionEvents">
+                            <label for="adoptionEvents"><i class="fas fa-calendar-alt"></i> Adoption Events</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="fundraising" name="interests" value="fundraising">
+                            <label for="fundraising"><i class="fas fa-hand-holding-usd"></i> Fundraising</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="transportation" name="interests" value="transportation">
+                            <label for="transportation"><i class="fas fa-car"></i> Animal Transportation</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="admin" name="interests" value="admin">
+                            <label for="admin"><i class="fas fa-file-alt"></i> Administrative Work</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="experience"><i class="fas fa-clipboard-list"></i> Previous Experience with Animals (if any)</label>
+                    <textarea id="experience" name="experience" rows="4"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="whyVolunteer" class="required"><i class="fas fa-question-circle"></i> Why do you want to volunteer with FawDopt?</label>
+                    <textarea id="whyVolunteer" name="whyVolunteer" rows="4" required></textarea>
+                </div>
+                
+                <div class="form-group input-field">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <input type="text" id="emergencyContact" name="emergencyContact" placeholder="Emergency Contact Name & Number" required>
+                </div>
+                
+                <button type="submit" class="submit-btn btn"><i class="fas fa-paper-plane"></i> Submit Volunteer Application</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('volunteerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const availability = document.getElementById('availability').value;
+            const whyVolunteer = document.getElementById('whyVolunteer').value;
+            const emergencyContact = document.getElementById('emergencyContact').value;
+            
+            if (!fullName || !email || !phone || !availability || !whyVolunteer || !emergencyContact) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            window.location.href = 'welcome.html';
+            alert('Thank you for your volunteer application! We will contact you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
