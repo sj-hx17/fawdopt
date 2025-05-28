@@ -287,10 +287,6 @@
             .then(() => {
               alert("Application submitted successfully!");
               document.getElementById("volunteerForm").reset();
-              window.location.href = "welcome.html";
-              setTimeout(() => {
-                window.location.href = "welcome.html";
-              }, 1000); // 1-second delay to allow reset to complete
             })
             .catch((error) => {
               console.error("Error saving data: ", error);
